@@ -44,7 +44,7 @@ class admin extends Component {
     this.onSubmit =  this.onSubmit.bind(this);
     this.Report = this.Report.bind(this);
 
-     this.state = {
+    this.state = {
       currentTitle: "",
       currentDes: "",
       currentTask: "",
@@ -66,25 +66,18 @@ class admin extends Component {
 
   componentWillMount() {
     setInterval(this.myFunction, 60000);
-
     this.props.getPages(pageinfo); 
     // this.props.getTickets();
     axios.get("http://localhost:5000/freelancing/api/get/cnttickets").then(res => {
       totalpagenum = res.data;
     });
-    
   }
   
   componentWillReceiveProps(nextProps) {
-    // var maininfo = {};
-    //   maininfo.pagenum = this.state.currentPage;
-    //   maininfo.pagesize = 5;
-    //   this.props.getPages(maininfo);
+
   }
 
   Report() {
-    // alert("onClick");
-
     var Reportdata = {};
     Reportdata.id = this.state.currentticket_id;
     Reportdata.review = document.getElementById("review_area").value;
@@ -94,8 +87,6 @@ class admin extends Component {
       var feedbackmodal = document.getElementById("feedback");
       feedbackmodal.setAttribute("style", "display: none; ");
     });
-
-
   }
   onFileChange(e) {
         this.setState({ imgCollection: e.target.files });
@@ -112,15 +103,12 @@ class admin extends Component {
       axios.post("http://localhost:5000/freelancing/api/upload-images", formData, {
       }).then(res => {
           console.log("this is result " + res.data);
-          alert('Done file upload');
       }).catch((error) => {
           console.log("this is error" + error);
-          alert("falied");
         })
   }
 
   ChangeAvatar(id , who , url) {
-    // alert("id" + id + "       who" + who + "         url" + url + "      value" + document.getElementById(id).value);
     var changeavatardata = {};
     changeavatardata._id = id ; 
     changeavatardata.avatar_url = url;
@@ -135,7 +123,6 @@ class admin extends Component {
   }
 
   avatarClick(id , flag , price) {
-    // alert(id + "    " + flag);
     if(flag == 1)
       return;
     else {
@@ -191,7 +178,6 @@ class admin extends Component {
     ChangeSelectdata.value = selectValue;
     ChangeSelectdata.user = user;
     
-
     axios.post("http://localhost:5000/freelancing/api/status/changed" , ChangeSelectdata).then(res =>{
       var maininfo = {};
       maininfo.pagenum = this.state.currentPage;
@@ -200,7 +186,6 @@ class admin extends Component {
       if(selectValue == "Complete" || selectValue == "InComplete" )
         this.goToModal(id);
     })
-
   }
 
   Award() {
@@ -224,7 +209,6 @@ class admin extends Component {
   }
 
   selectBider(data) {
-
     this.setState({
       currentBideravatar: data.bider_url,
       currentBidername: data.bider_id,
@@ -269,7 +253,6 @@ class admin extends Component {
     pageinfo.pagesize = 4;
     this.props.getPages(pageinfo);
   }
-
 
   nextPagination() {
     if(this.state.currentPage > (totalpagenum / 4) )

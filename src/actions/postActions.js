@@ -35,7 +35,6 @@ export const getAvatars = () => dispatch => {
 }
 
 export const getLogin = userdata => dispatch => {
-	console.log("welcome to login" + userdata);
 	axios.post("http://localhost:5000/freelancing/api/auth/login", {user_id:userdata})
 	.then(res => dispatch({
 		type: GET_LOGIN,

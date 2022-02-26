@@ -28,7 +28,6 @@ class Table extends Component {
       PageSize: 6,
       uploadurl: [],
     }
-
     this.listtab = this.listtab.bind(this);
     this.detailtab = this.detailtab.bind(this);
     this.firstPagination = this.firstPagination.bind(this);
@@ -83,8 +82,6 @@ class Table extends Component {
     maininfo.pagesize = this.state.PageSize;
     this.props.getPages(maininfo);
   }
-
-
   nextPagination() {
     var flag1 = 0;
     if((totalpagenum % this.state.PageSize) == 0 )
@@ -100,7 +97,6 @@ class Table extends Component {
     maininfo.pagesize = this.state.PageSize;
     this.props.getPages(maininfo);
   }
-
   prevPagination() {
     if(this.state.currentPageNum == 1)
       return;
@@ -113,8 +109,6 @@ class Table extends Component {
       this.props.getPages(maininfo);
     }
   }
-
-
   Close() {
     document.getElementById("price_input").value = "";
     document.getElementById("description_textarea").value = "";
@@ -128,7 +122,6 @@ class Table extends Component {
     biddata.bid_price = document.getElementById("price_input").value;
     biddata.bid_description = document.getElementById("description_textarea").value;
     biddata.bid_deadline = document.getElementById("deadline_input").value;
-    
     if (biddata.bid_deadline == "" || biddata.bid_description =="" || biddata.bid_price == "")
     {
       alert("All field are Required");
@@ -148,7 +141,7 @@ class Table extends Component {
         });
       }
     }
-  onClick(id, flag , ticket) {
+    onClick(id, flag , ticket) {
     if(flag != "Not Assigned")
       return;
     else {

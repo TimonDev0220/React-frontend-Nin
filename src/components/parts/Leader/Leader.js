@@ -29,7 +29,7 @@ class Leader extends Component {
               <th className='tableth'>Profit($)</th>
               <th className='tableth'>Success(%)</th>
             </tr>
-            {leaderItems} 
+            { leaderItems } 
           </table>
         </div>
       </div>
