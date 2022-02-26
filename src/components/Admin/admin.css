@@ -12,7 +12,6 @@
   display: flex;
   flex-direction: row;
 }
-
 .adminlogodiv {
   display: inline-block;
   background-image: url("http://localhost:3000/images/girlavatar.png");
@@ -36,7 +35,6 @@
   display: flex;
   flex-direction: row;
 }
-
 /* The side navigation menu */
 .sidebar1 {
   margin: 0;
@@ -56,19 +54,16 @@
   text-decoration: none;
   font-size: 25px;
 }
-
 /* Active/current link */
 .sidebar1 a.active {
   background-color: black;
   color: white;
 }
-
 /* Links on mouse-over */
 .sidebar1 a:hover:not(.active) {
   background-color: #555;
   color: white;
 }
-
 .postdiv {
   width: 150px;
   margin-bottom: 5px;
@@ -208,7 +203,6 @@
   background-image: url("http://localhost:3000/images/next.png");
   border: none;
 }
-
 .lastbtn {
   background-image: url("http://localhost:3000/images/last.png");
   border: none;
@@ -216,7 +210,6 @@
 .footerdiv {
   width: 100%;
 }
-
 .currentBiderAvatar {
   width: 60px;
 }
@@ -236,8 +229,8 @@
 }
 select {
   color: red;
+  height: 30px;
 }
-
 .avatarshow {
   width: 60px;
   margin-left: 100px;
@@ -301,7 +294,6 @@ select {
   
   }
 }
-
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
   .sidebar a {

@@ -12,7 +12,6 @@
 	width: 75%;
 	margin: auto;
 }
-
 th {
 	font-size: 25px;
 	color: white;
@@ -22,7 +21,6 @@ th {
 }
 tr:nth-child(even){background-color: rgb(191, 191, 191);}
 tr:nth-child(odd){background-color: #888888;}
-
 tr:hover {
 	background-color: white;
 	color: #666666;
@@ -47,7 +45,6 @@ table {
 	.container2 {
 		width: 100%;
 	}
-
 	th {
 		font-size: 18px;
 	}
