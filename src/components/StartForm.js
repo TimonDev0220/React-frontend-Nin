@@ -19,9 +19,6 @@ class StartForm extends Component {
         this.onChange = this.onChange.bind(this); 
         this.login = this.login.bind(this);
     }
-   componentWillReceiveProps(nextProps) {
-     
-   }
   onChange(e) {
     this.setState({user_id: e.target.value});
     console.log(this.state.user_id);
@@ -37,10 +34,8 @@ class StartForm extends Component {
           window.location.href='/Main/main';
         })
         .catch(err=>console.log(err));
-        
   }
   login(e) {
-
       const user_id = this.state.user_id;
       axios.post('http://localhost:5000/freelancing/api/auth/login', { user_id: user_id})
       .then(res=> {
@@ -80,7 +75,6 @@ class StartForm extends Component {
     }
 
   render() {
-
     return (
       <div className="Form">
           <div className="Form_p"><p className="Form_text"> Login </p></div>
@@ -99,13 +93,11 @@ class StartForm extends Component {
       </div>
     );
   }
- 
 }
 
 StartForm.propTypes = {
   posts: PropTypes.array.isRequired,
 }
-
 const mapStateToProps = state => ({
   posts: state.posts.present
 })

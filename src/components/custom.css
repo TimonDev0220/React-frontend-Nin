@@ -89,7 +89,6 @@ body {
 	width: 114px;
 	height: 54px;
 }
-
 .Form_img1 {
 	width: 350px;
 	margin: auto;
@@ -115,8 +114,6 @@ body {
 .Form_img:hover {
 	cursor: pointer;
 	background-image: url(http://localhost:3000/login1.png);
-/*	transform: rotate(360deg); 
-	transition: all 0.1s ease-in-out 0s;*/
 	margin: auto;
 	width: 75px;
 	height: 75px;
@@ -131,11 +128,9 @@ body {
 	width:280px;
 	margin: auto;
 }
-
 .Form_avatar3 {
 	width: 80px;
 }
-
 .mainbody {
 	background-image: url("../../public/images/mainback.png");
 	height: 100vh;

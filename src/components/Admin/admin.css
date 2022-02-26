@@ -284,7 +284,6 @@ select {
   .sidebar a {float: left;}
   div.content {margin-left: 0;}
 }
-
 @media screen and (max-width: 655px) {
   .adminlogodiv {
     width: 150px;

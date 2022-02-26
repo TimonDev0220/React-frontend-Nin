@@ -80,7 +80,6 @@
   from {top:-300px; opacity:0} 
   to {top:0; opacity:1}
 }
-
 @keyframes animatetop {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
@@ -102,15 +101,12 @@ h2 {
   text-decoration: none;
   cursor: pointer;
 }
-
 .modal-header {
   padding: 2px 16px;
   background-color: black;
   color: white;
 }
-
 .modal-body {padding: 2px 16px; background-color: grey;}
-
 .imgdiv {
 	width: 60%;
 	margin: auto;
@@ -162,7 +158,6 @@ h2 {
 .buybtn:active {
 	transform: translate(3px , 3px);
 }
-
 @media only screen and (max-width: 821px) {
 	.modal-content {
 		width: 80%;
@@ -174,8 +169,6 @@ h2 {
 		font-size: 35px;
 	}
 }
-
-
 @media only screen and (max-width: 500px) {
 	.buybtn {
 		font-size: 20px;

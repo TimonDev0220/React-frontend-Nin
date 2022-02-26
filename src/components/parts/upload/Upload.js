@@ -33,12 +33,10 @@ export class PicturesWall extends React.Component {
       previewTitle: file.name || file.url.substring(file.url.lastIndexOf('/') + 1),
     });
   };
-
   handleChange = ({ fileList }) => { 
     this.setState({ fileList });
     console.log(fileList + "hellow");
   };
-
   render() {
     const { previewVisible, previewImage, fileList, previewTitle } = this.state;
     const uploadButton = (
@@ -64,7 +62,7 @@ export class PicturesWall extends React.Component {
           footer={null}
           onCancel={this.handleCancel}
         >
-          <img alt="example" style={{ width: '100%' }} src={previewImage} />
+        <img alt="example" style={{ width: '100%' }} src={previewImage} />
         </Modal>
       </div>
     );

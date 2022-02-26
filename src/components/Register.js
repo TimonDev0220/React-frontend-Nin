@@ -11,7 +11,6 @@ class Register extends Component {
             skype_id: "",
         };
     }
-    
   register() {
     global_skype_id = document.getElementById("skype_id").value;
     axios.post(`http://localhost:5000/freelancing/api/auth/register`, { user_skypeid: global_skype_id })
@@ -24,7 +23,6 @@ class Register extends Component {
   }
 
   render() {
-
     return (
       <div className="Form">
           <div className="Form_p1"><p className="Form_text"> Register </p></div>
