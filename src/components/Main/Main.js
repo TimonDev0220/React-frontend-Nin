@@ -50,7 +50,6 @@ class Main extends Component {
     localStorage.setItem('currentUser_avatar' , to);
     window.location.href="/Main/main"; 
   }
-
   Tabclick(flag) {
       tabbtn1 = document.getElementById("tab_1");
       tabbtn2 = document.getElementById("tab_2");

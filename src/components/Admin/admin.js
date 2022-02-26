@@ -317,14 +317,12 @@ class admin extends Component {
         }
       }
   }
-
   myFunction() {
     if(i > 8)
       i = i % 9;
     document.getElementById("mainbody1").setAttribute("style", "background-image: url("+ dir[i] +")");
     i++;
   }
-
   selectTask(id, flag) {
     if(flag != "Not Assigned")
       return;
@@ -343,7 +341,6 @@ class admin extends Component {
           modal.style.display = "none";
         }
       }
-
       axios.get("http://localhost:5000/freelancing/api/freelancer/tickets" + "/" + id ).then(res=>{
         this.setState({
           "currentTitle": res.data.ticket_name,
@@ -356,7 +353,6 @@ class admin extends Component {
 
     }
   }
-
   onClick(flag) {
     var content1 = document.getElementById("content1");
     var content2 = document.getElementById("content2");
@@ -408,7 +404,6 @@ class admin extends Component {
           <td className="td"> {bider.bid_deadline} </td>
         </tr>
     ));
-
     var result1 = Object.values(this.props.asklists);
     const asklistItems = this.props.asklists.map(asklist => {
       return <tr className="tr" key={asklist._id}>
@@ -428,9 +423,6 @@ class admin extends Component {
           if(Avatar.ava_level === 1)
             return <div className="contain_img" key={Avatar._id}><img className="level" src={Avatar.ava_url} alt="loading.." style={{opacity:Avatar.ava_status == 1 ? 0.3:1}}  id={Avatar.ava_url} onClick={() => { this.avatarClick(Avatar.ava_url , Avatar.ava_status , Avatar.ava_budget)}}/></div>      
       });
-
-
-
     const avatarItems1 = this.props.avatars.map(Avatar => {  
           if(Avatar.ava_level === 2)
             return <div className="contain_img" key={Avatar._id}><img className="level" src={Avatar.ava_url} alt="loading..." style={{opacity:Avatar.ava_status == 1 ? 0.3:1}} id={Avatar.ava_url} onClick={() => { this.avatarClick(Avatar.ava_url , Avatar.ava_status, Avatar.ava_budget)}}/></div>      
@@ -579,7 +571,6 @@ class admin extends Component {
                 </div>
               </div>
 
-
             </div>
             <div className="contentss content2" id="content2">
               <div className='container4'>
@@ -616,7 +607,6 @@ class admin extends Component {
                   </div>
                 </div>
               </div>
-
 
             </div>
           </div>

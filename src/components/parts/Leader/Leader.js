@@ -41,7 +41,6 @@ Leader.propTypes = {
   getLeaders: PropTypes.func.isRequired,
   leaders: PropTypes.array.isRequired,
 }
-
 const mapStateToProps = state => ({
   leaders: state.posts.leaders
 })
