@@ -34,8 +34,8 @@ class Register extends Component {
             <img className="toimg1" src="./images/login_png1.png" alt="loading"/>
             <img className="hereimg1" onClick={()=> window.location.href='/'} src="./images/register_png2.png" alt="loading" />
           </div>
-          <div className="Form_img3" >
-            <p className="nearimg3">Register</p><img className="Form_avatar3" onClick={this.register} src="./images/register.png" alt="loading"/>
+          <div className="Form_img3" onClick={this.register} >
+          
           </div>
       </div>
     );

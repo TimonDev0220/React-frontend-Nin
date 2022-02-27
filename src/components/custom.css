@@ -6,7 +6,7 @@ body {
 	width: 570px;
 	background-color: rgb(191,191,191);
 	margin: auto;
-	margin-top: 200px;
+	margin-top: 150px;
 	border-radius: 30px 5px 30px 5px;
 	padding-bottom: 20px;
 	box-shadow: 8px 8px 8px #e6e6e6;
@@ -98,17 +98,11 @@ body {
 	margin: auto;
 	display: none;
 }
-.Form_avatar1 {
-	font-weight: bold;
-	font-size: 45px;
-	color: #dddddd;
-}
-.Form_avatar1:hover {
-	display: none;
-}	
+
 .Form_img {
 	height: 50px;
 	width: 185px;
+	background-image: url(http://localhost:3000/images/comein.png);
 	margin: auto;
 }
 .Form_img:hover {
@@ -125,8 +119,13 @@ body {
 	display: inline-block;
 }
 .Form_img3 {
-	width:280px;
+	width: 176px;
+	height: 57px;
 	margin: auto;
+	background-image: url(http://localhost:3000/images/register3.png);
+}
+.Form_img3:hover {
+	background-image: url(http://localhost:3000/images/register4.png);
 }
 .Form_avatar3 {
 	width: 80px;
@@ -137,4 +136,7 @@ body {
 	background-size:     cover;                      /* <------ */
     background-repeat:   no-repeat;
     background-position: center center; 
+}
+#err_id {
+	width: 400px;
 }

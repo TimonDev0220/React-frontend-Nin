@@ -88,7 +88,7 @@ class StartForm extends Component {
             <img className="hereimg" onClick={()=> window.location.href='/register'} src="./images/register_png2.png" alt="loading" />
           </div>
           <div className="Form_img" onClick={this.login}>
-            <div className="Form_avatar1">Come In</div>
+            
           </div>
       </div>
     );
