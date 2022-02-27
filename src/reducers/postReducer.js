@@ -1,5 +1,6 @@
 import { GET_TICKETS , GET_LEADERS , GET_AVATARS , GET_LOGIN , LOGOUT , GET_BIDERS , GET_PAGES , GET_REQUESTS} from '../actions/types';
 
+
 const initialState = {
 	items: [],
 	leaders: [],
@@ -10,6 +11,7 @@ const initialState = {
 	asklists: [],
 	item: {}
 }
+
 
 export default function(state = initialState , action) {
 	switch (action.type) {

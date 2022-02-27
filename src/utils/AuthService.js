@@ -15,6 +15,7 @@ var auth = new auth0.WebAuth({
   domain: CLIENT_DOMAIN
 });
 
+
 export function login() {
   auth.authorize({
     responseType: 'token id_token',

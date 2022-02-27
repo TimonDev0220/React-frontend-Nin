@@ -21,7 +21,6 @@ class CelebrityJokes extends Component {
   }
 
   render() {
-
     const { jokes } = this.state;
 
     return (
