@@ -15,7 +15,6 @@ class StartForm extends Component {
             user_id: "",
             err: "",        
         };
-
         this.onChange = this.onChange.bind(this); 
         this.login = this.login.bind(this);
     }
