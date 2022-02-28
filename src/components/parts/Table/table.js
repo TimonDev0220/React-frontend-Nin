@@ -27,6 +27,11 @@ class Table extends Component {
       currentPageNum: 1,
       PageSize: 6,
       uploadurl: [],
+      currentWho: "",
+      review: "",
+      rating: "",
+      currentavatar: "",
+      currentTicket: "",
     }
     this.listtab = this.listtab.bind(this);
     this.detailtab = this.detailtab.bind(this);
@@ -142,9 +147,9 @@ class Table extends Component {
       }
     }
     onClick(id, flag , ticket) {
-    if(flag != "Not Assigned")
+    if(flag === "Assigned")
       return;
-    else {
+    else if(flag === "Not Assigned") {
 
       console.log("upload files list" + ticket.ticket_upload.length);
       if(ticket.ticket_upload) {
@@ -175,6 +180,31 @@ class Table extends Component {
       })
 
     }
+    else if(flag === "Complete" || flag === "InComplete") {
+      var modal2 = document.getElementById("myModal2");
+      this.setState({
+        currentWho: ticket.ticket_winner,
+        review: ticket.feedback,
+        rating: ticket.review,
+        currentavatar: ticket.winner_avatar,
+        currentTicket: ticket.ticket_name,
+      });
+
+      var span = document.getElementsByClassName("close")[1];
+
+      modal2.style.display = "block";
+
+      span.onclick = function() {
+        modal2.style.display = "none";
+      }
+
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal2.style.display = "none";
+        }
+      }
+
+    }
   }
 
   detailtab() {
@@ -201,15 +231,13 @@ class Table extends Component {
   render() {
     var result = Object.values(this.props.pages);
     const ticketItems = result.map(ticket => (
-        <tr className="tr" key={ticket._id} onClick={() => { this.onClick(ticket._id , ticket.ticket_status , ticket)}} >
+        <tr className="tr" key={ticket._id} onClick={() => { this.onClick(ticket._id , ticket.ticket_status , ticket)}} id="tickettabletr">
           <td className="td"> {ticket.ticket_name} </td>
           <td className="td"> {ticket.ticket_skills} </td>
           <td className="td"> {ticket.ticket_price} </td>
           <td className="td"> {ticket.ticket_deadline} </td>
           <td className="td"> {ticket.ticket_status} </td>
           <td className="td"> {ticket.ticket_winner} </td>
-          <td className="td"> {ticket.feedback} </td>
-          <td className="td"> {ticket.review} </td>
         </tr>
       ));
 
@@ -223,17 +251,15 @@ class Table extends Component {
     return (
       <div className='background1'>
         <div className='container2'>
-          <label className="rowcnt">Row Cnt:</label><input className="ChangePagesize" onChange = {e =>this.ChangePagesize(e)} />
+          <label className="rowcnt">Row Count:</label><input className="ChangePagesize" onChange = {e =>this.ChangePagesize(e)} />
           <table className='table'> 
-            <tr className='tableheader'>
+            <tr className='tableheader'  id="tickettableth">
               <th className='tableth'>Title</th>
               <th className='tableth'>Skills Required</th>
               <th className='tableth'>Price</th>
               <th className='tableth'>Deadline</th>
               <th className='tableth'>Status</th>
               <th className='tableth'>Winner</th>
-              <th className='tableth'>Review</th>
-              <th className='tableth'>Rating</th>
             </tr>
             {ticketItems} 
           </table>
@@ -252,7 +278,7 @@ class Table extends Component {
               <span class="close" onClick={()=>{this.Close()}}>&times;</span>
               <h2> {this.state.currentTitle} </h2>
             </div>
-            <div class="modal-body1">
+            <div class="modal-body1" id="tabmodal">
               <div class="tabs">
                 <div className="labeldiv">
                   <div className="detaildiv"><div className="detailauto"><label className="label detaillabel" id="detaillabel" onClick={()=>{this.detailtab()}} >Details</label></div></div>
@@ -305,6 +331,27 @@ class Table extends Component {
           </div>
 
         </div>
+
+        <div id="myModal2" class="modal1">
+          <div class="modal-content1">
+            <div class="modal-header1">
+              <span class="close" onClick={()=>{this.Close()}}>&times;</span>
+              <h2> {this.state.currentTitle} </h2>
+            </div>
+            <div class="modal-body1">
+              <table className="table1" id="resulttable"><tr><th>Title</th><th>Who</th><th>Review</th><th>Rating</th></tr>
+              <tr>
+                <td>{this.state.currentTicket}</td>
+                <td><img className="winner_avatar" src={this.state.currentavatar} alt="loading..." />{this.state.currentWho}</td>
+                <td>{this.state.review}</td>
+                <td>{this.state.rating}</td>
+              </tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     );
   }
