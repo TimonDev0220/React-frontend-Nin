@@ -247,7 +247,7 @@ class admin extends Component {
       maininfo.pagenum = this.state.currentPage;
       maininfo.pagesize = 4;
       this.props.getPages(maininfo);
-      if(selectValue == "Complete" || selectValue == "InComplete" )
+      if(selectValue == "Complete" || selectValue == "Incomplete" )
         this.goToModal(id);
     })
   }
@@ -472,7 +472,7 @@ class admin extends Component {
                                 <option value="Not Assigned">Not Assigned</option>
                                 <option value="Assigned">Assigned</option>
                                 <option value="Progressing">Progressing</option>
-                                <option value="InComplete">InComplete</option>
+                                <option value="Incomplete">Incomplete</option>
                                 <option value="Complete">Complete</option>
                               </select></td>
           <td className="td1" id="admintabletd"> <img className="winneravatar" src={ticket.winner_avatar} alt="none" />{ticket.ticket_winner} </td>
