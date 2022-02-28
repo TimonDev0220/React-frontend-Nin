@@ -252,7 +252,7 @@ class Table extends Component {
       <div className='background1'>
         <div className='container3'>
           <label className="rowcnt">Row Count:</label><input className="ChangePagesize" onChange = {e =>this.ChangePagesize(e)} />
-          <table className='table'> 
+          <table className='table' id="tickettable"> 
             <tr className='tableheader'  id="tickettableth">
               <th className='tableth'>Title</th>
               <th className='tableth'>Skills Required</th>
