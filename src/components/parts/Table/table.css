@@ -299,11 +299,6 @@ h4 {color: white;}
 	color: white;
 	margin-left: 50px;
 }
-/*.notbid {
-	position: absolute;
-	margin-top: -100px;
-	z-index: 1;
-}*/
 .rowcnt {
 	font-size: 22px;
 	color: white;
@@ -335,7 +330,6 @@ h4 {color: white;}
 		height: 65vh;
 	}
 }
-
 @media only screen and (max-width: 738px) {
 	.container2 {
 		width: 100%;
@@ -356,7 +350,6 @@ h4 {color: white;}
 		margin-right: 0px;
 	}
 }
-
 @media only screen and (max-width: 599px) {
 	.container3 {
 		width: 100%;

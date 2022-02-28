@@ -111,7 +111,6 @@
 		padding-top: 10px;
 	}
 }
-
 @media only screen and (max-width: 559px) {
 	.main_container {
 		width: 430px;
@@ -133,7 +132,6 @@
 		top: 5%;
 	}
 }
-
 @media only screen and (max-width: 437px) {
 	.main_container {
 		width: 345px;

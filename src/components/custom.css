@@ -98,7 +98,6 @@ body {
 	margin: auto;
 	display: none;
 }
-
 .Form_img {
 	height: 50px;
 	width: 185px;
@@ -145,7 +144,6 @@ body {
 	 font-size:25px; 
 	 color: white;
 }
-
 @media screen and (max-width: 591px) {
 	.Form {
 		width: 375px;
