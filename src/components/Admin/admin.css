@@ -190,10 +190,13 @@
   margin: auto;
 }
 .pageicon {
-  width: 65px;
-  height: 65px;
+  width: 45px;
+  height: 45px;
   display: inline-block;
   border: none !important;
+    background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center; 
   box-shadow: 2px #dddddd;
 }
 .pageicon:hover {

@@ -210,23 +210,23 @@ class Table extends Component {
   detailtab() {
       listdiv = document.getElementById("tab2");
       detaildiv = document.getElementById("tab1");
-      detaillabel = document.getElementById("detaillabel");
-      bidlistlabel = document.getElementById("bidlistlabel");
+      var labeldetail = document.getElementById("detaildiv");
+      var labellist = document.getElementById("listdiv");
+      labellist.setAttribute("style", "border-bottom: 3px solid #505050; font-size: 25px;");
+      labeldetail.setAttribute("style", "border-bottom: none; font-size: 27px;");
       listdiv.setAttribute("style", "display: none;");
       detaildiv.setAttribute("style" , "display: block;");
-      detaillabel.setAttribute("style" , "font-size: 2.3em; text-decoration: underline; font-weight: bold;");
-      bidlistlabel.setAttribute("style" , "font-size: 2.0em; text-decoration: none; font-weight: normal;");
   }
   listtab() {
       this.props.getBiders(this.state.currentTask);
       listdiv = document.getElementById("tab2");
       detaildiv = document.getElementById("tab1");
+      var labeldetail = document.getElementById("detaildiv");
+      var labellist = document.getElementById("listdiv");
+      labeldetail.setAttribute("style", "border-bottom: 3px solid #505050; font-size: 25px;");
+      labellist.setAttribute("style", "border-bottom: none; font-size: 27px;");
       listdiv.setAttribute("style", "display: block;");
       detaildiv.setAttribute("style" , "display: none;");
-      detaillabel = document.getElementById("detaillabel");
-      bidlistlabel = document.getElementById("bidlistlabel");
-      detaillabel.setAttribute("style" , "font-size: 2.0em; text-decoration: none; font-weight: normal; ");
-      bidlistlabel.setAttribute("style" , "font-size: 2.3em; text-decoration: underline; font-weight: bold;");
   }
   render() {
     var result = Object.values(this.props.pages);
@@ -250,7 +250,7 @@ class Table extends Component {
     ))
     return (
       <div className='background1'>
-        <div className='container2'>
+        <div className='container3'>
           <label className="rowcnt">Row Count:</label><input className="ChangePagesize" onChange = {e =>this.ChangePagesize(e)} />
           <table className='table'> 
             <tr className='tableheader'  id="tickettableth">
@@ -281,8 +281,8 @@ class Table extends Component {
             <div class="modal-body1" id="tabmodal">
               <div class="tabs">
                 <div className="labeldiv">
-                  <div className="detaildiv"><div className="detailauto"><label className="label detaillabel" id="detaillabel" onClick={()=>{this.detailtab()}} >Details</label></div></div>
-                  <div className="listdiv"><div className="listauto"><label className="label bidlistlabel" id="bidlistlabel" onClick={()=>{this.listtab()}}>Bid List</label></div></div>
+                  <div className="detaildiv" id="detaildiv" onClick={()=>{this.detailtab()}}>Details</div>
+                  <div className="listdiv" id="listdiv" onClick={()=>{this.listtab()}}>Bid List</div>
                 </div>
                 <div class="tab-2" id="tab1">
                   <div >
