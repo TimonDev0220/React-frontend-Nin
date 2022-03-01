@@ -32,6 +32,7 @@ class Table extends Component {
       rating: "",
       currentavatar: "",
       currentTicket: "",
+      reviewimg: "",
     }
     this.listtab = this.listtab.bind(this);
     this.detailtab = this.detailtab.bind(this);
@@ -182,6 +183,43 @@ class Table extends Component {
     }
     else if(flag === "Complete" || flag === "InComplete") {
       var modal2 = document.getElementById("myModal2");
+      if (ticket.review == 5)
+        this.setState({
+          reviewimg: "http://localhost:3000/images/rating5.png",
+        })
+      else if(ticket.review < 5 && ticket.review > 4)
+        this.setState({
+          reviewimg: "http://localhost:3000/images/rating45.png",
+        })
+      else if(ticket.review == 4)
+        this.setState({
+          reviewimg: "http://localhost:3000/images/rating4.png",
+        })
+      else if(ticket.review < 4 && ticket.review > 3)
+        this.setState({
+          reviewimg: "http://localhost:3000/images/rating35.png",
+        })
+      else if(ticket.review == 3)
+        this.setState({
+          reviewimg: "http://localhost:3000/images/rating3.png",
+        })
+      else if(ticket.review < 3 && ticket.review > 2)
+        this.setState({
+          reviewimg: "http://localhost:3000/images/rating25.png",
+        })
+      else if(ticket.review == 2)
+        this.setState({
+          reviewimg: "http://localhost:3000/images/rating2.png",
+        })
+      else if(ticket.review < 2 && ticket.review > 1)
+        this.setState({
+          reviewimg: "http://localhost:3000/images/rating15.png",
+        })
+      else if(ticket.review == 1)
+        this.setState({
+          reviewimg: "http://localhost:3000/images/rating1.png",
+        })
+      
       this.setState({
         currentWho: ticket.ticket_winner,
         review: ticket.feedback,
@@ -344,7 +382,7 @@ class Table extends Component {
                 <td>{this.state.currentTicket}</td>
                 <td><img className="winner_avatar" src={this.state.currentavatar} alt="loading..." />{this.state.currentWho}</td>
                 <td>{this.state.review}</td>
-                <td>{this.state.rating}</td>
+                <td><img src={this.state.reviewimg} alt="loading..." />{this.state.rating}</td>
               </tr>
               </table>
             </div>
