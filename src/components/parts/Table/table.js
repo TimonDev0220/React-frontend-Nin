@@ -181,7 +181,7 @@ class Table extends Component {
       })
 
     }
-    else if(flag === "Complete" || flag === "InComplete") {
+    else if(flag === "Complete" || flag === "Incomplete") {
       var modal2 = document.getElementById("myModal2");
       if (ticket.review == 5)
         this.setState({
